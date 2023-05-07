@@ -93,7 +93,7 @@ $f3->route('GET|POST /orderform2', function($f3) {
         $f3->set('SESSION.conds', $conds);
 
         //reroute to the summary page
-        $f3->reroute('orderform2');
+        $f3->reroute('summary');
     }
 
     //echo '<h1>Order Form 2</h1>';
