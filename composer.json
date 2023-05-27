@@ -1,5 +1,5 @@
 {
-  "name": "jocichon/328/hello",
+  "name": "328/diner",
   "authors": [
     {
       "name": "Jo Cichon",
@@ -8,5 +8,9 @@
   ],
   "require": {
     "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["classes/", "model/"]
   }
+
 }

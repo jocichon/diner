@@ -7,9 +7,14 @@
     <h2>Order Summary</h2>
 
     <!-- {{ @SESSION.food }} these are called templating tokens, the double curly braces are called "handle bars" -->
-    <p>You ordered {{ @SESSION.food }} for {{ @SESSION.meal }}<br>
-        Condiments:  {{ @SESSION.condiments }}
-    </p>
+    <p>You ordered {{ @SESSION.order->getFood() }} for {{ @SESSION.order->getMeal }}</p>
+    <check if="{{ !empty@SESSION.order->getCondiments}}">
+        Condiments:  {{ @SESSION.order->getCondiments }}
+    </check>
+
+    <br>
+
+    <a href="orderform1">Place another order</a>
     <p></p>
 </div>
 
