@@ -6,10 +6,12 @@
     <h1>Thank you for your order!</h1>
     <h2>Order Summary</h2>
 
-    <!-- {{ @SESSION.food }} these are called templating tokens, the double curly braces are called "handle bars" -->
-    <p>You ordered {{ @SESSION.order->getFood() }} for {{ @SESSION.order->getMeal }}</p>
-    <check if="{{ !empty@SESSION.order->getCondiments}}">
-        Condiments:  {{ @SESSION.order->getCondiments }}
+    <!-- {{ @SESSION.food }} these are called templating tokens,
+    the double curly braces are called "handle bars" -->
+    <p>You ordered {{ @SESSION.order->getFood() }}
+        for {{ @SESSION.order->getMeal() }}</p>
+    <check if="{{!empty(@SESSION.order->getCondiments())}}">
+        Condiments:  {{ @SESSION.order->getCondiments() }}
     </check>
 
     <br>

@@ -61,46 +61,51 @@ $f3->route('GET|POST /orderform1', function($f3) {
     if($_SERVER['REQUEST_METHOD'] == "POST") {
 
         //Get the data from the POST array if POST is set
-
+        var_dump($_POST);
         //food
-        if (isset($_POST['food'])){
-            $food = $_POST(['food']);
+        if (isset($_POST['food'])) {
+            $food = $_POST['food'];
         }
         //meal
         if (isset($_POST['meal'])) {
-            $meal = $_POST(['meal']);
+            $meal = $_POST['meal'];
         }
+
+        //TEST
+        echo "The meal is set to " . $meal;
+        echo "The food is set to " . $food;
+
 
         //Instantiate Order object and add it to the SESSION array
         $newOrder = new Order();
-
+        //TEST
+        echo "<pre>";
+        var_dump($newOrder);
+        echo "<pre>";
 
         //Validate the data and add it to the session array as a field of the object
         //Validation function is defined in the model
         //meal
-        if(Validate::validMeal($meal)) {
+        if (Validate::validMeal($meal)) {
             $newOrder->setMeal($meal);
-        }
-        //if data is invalid set an error variable in the F3 hive
+        } //if data is invalid set an error variable in the F3 hive
         else {
             $f3->set('errors["$meal"]', 'Invalid meal selected');
         }
 
         //food
-        if(Validate::validFood($food)) {
+        if (Validate::validFood($food)) {
             //Store data in a SESSION array as the food field in the Order object
             $newOrder->setFood($food);
-        }
-        else {
+        } else {
             $f3->set('errors["$food"]', 'Invalid food selected');
         }
-
 
         //if there are no errors (if the array is empty)
         if(empty($f3->get('errors'))) {
             //Add the object to the session array
             $f3->set('SESSION.order', $newOrder);
-            ///Redirect to orderform2 route
+            ///Reroute to orderform2
             $f3->reroute('orderform2');
         }
     }
