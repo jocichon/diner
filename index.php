@@ -7,6 +7,9 @@ error_reporting(E_ALL);
 //Require the needed files
 require_once('vendor/autoload.php');
 
+//For testing only
+$dataLayer = new DataLayer();
+
 //Instance of the Base class
 $f3 = Base::instance();
 

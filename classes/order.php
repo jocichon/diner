@@ -83,19 +83,3 @@ class Order
 
 }
 
-//$testOrder = new Order();
-//$testOrder->setFood("burrito");
-//$testOrder->setMeal("lunch");
-//$testOrder->setCondiments("salsa, sour cream");
-//
-//echo "Today for " . $testOrder->getMeal() . ", I am going to order a "
-//    . $testOrder->getFood() . " with " . $testOrder->getCondiments() . " on the side";
-//
-////how to print the Object in PHP
-////var_dump($testOrder);
-////print_r($testOrder);
-//
-////more readable
-//echo "<pre>";
-//var_dump($testOrder);
-//echo "<pre>";
